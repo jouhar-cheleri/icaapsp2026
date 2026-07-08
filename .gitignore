@@ -1,0 +1,13 @@
+# Internal source/working files — not part of the deployed website
+*.docx
+Main pages and instructions.md
+
+# Duplicate source logos kept in project root (the site uses assets/ copies)
+/College logo.png
+/Mathematical Association Logo.png
+/ramanujan mathematical society logo.png
+
+# Tooling / OS
+.claude/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Speaker photo placeholder">
+  <rect width="400" height="400" fill="#e9e4d8"/>
+  <circle cx="200" cy="160" r="66" fill="#c7bfae"/>
+  <path d="M96 340c0-57 47-104 104-104s104 47 104 104z" fill="#c7bfae"/>
+  <text x="200" y="378" font-family="Georgia, serif" font-size="20" font-style="italic"
+        text-anchor="middle" fill="#8a8270">Photo to be added</text>
+</svg>
