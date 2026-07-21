@@ -152,7 +152,9 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .hero h1 { color: var(--white); font-size: clamp(2rem, 5.2vw, 3.5rem); margin: 0 0 .35em; letter-spacing: -.01em; }
 .hero .acronym { color: var(--gold); }
 .hero__meta { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin: 1.3rem 0 1.6rem; font-size: 1.08rem; }
-.hero__meta span { display: inline-flex; align-items: center; gap: .5rem; color: #eaf3f0; }
+/* Only the direct children are flex items: the icon and one single run of text.
+   Keeping the text in one child stops a gap opening up when the venue wraps. */
+.hero__meta > span { display: inline-flex; align-items: baseline; gap: .5rem; color: #eaf3f0; }
 .hero__meta strong { color: var(--white); }
 .hero__assoc { margin-top: 1.6rem; color: #cfe3de; font-size: .95rem; }
 .hero__full { max-width: 60ch; color: #dfeeea; font-size: 1.15rem; }
