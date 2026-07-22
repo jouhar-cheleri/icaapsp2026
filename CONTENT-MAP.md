@@ -93,6 +93,122 @@ Design, colours, type and the maths background stay exactly as they are. Only th
 ### Already correct, flagging for the record
 14. Both docx files say **"December 9, 20 and 21, 2026"** — a typo for 19. The site already says 19–21. If the brochure is being reprinted, fix it there.
 
+## 4b. Page-by-page rework against the reference site (July 2026, ongoing)
+
+Second round: each page's **section order** is being matched to the equivalent ICAPSSP 2025
+page, one page per pass. Workflow is codified in `.claude/skills/page-pass/SKILL.md`.
+
+### ✅ Home — done
+
+Reference order (scraped verbatim): hero banner → "Supported by:" logo strip → welcome
+paragraph → Topics → Advisory Committee (flat list) → Important Dates → How to reach
+(Flight/Train/Bus) → "Register Here" → fee cards → footer.
+
+`index.html` as it now stands:
+
+| # | Section | Tint | Notes |
+|---|---|---|---|
+| 1 | Hero | — | Photo banner via `.hero::after` → `assets/hero.jpg`. CTAs + ANOR line **commented out** |
+| 2 | Supported by: | plain | Renamed from "Organized By…". 3 empty `.logo-card--empty` slots |
+| 3 | Summary paragraph | plain | New, in the reference's voice, under the logo strip |
+| — | ~~About the Conference~~ | — | **Commented out** at the client's request, kept in file |
+| 4 | Topics to be covered | tint | 18 items, unchanged |
+| 5 | Advisory (IAPC, 16 names) | plain | Plain `.namelist` text, no cards, no photos, no link |
+| 6 | Important dates | tint | 6 rows, unchanged |
+| 7 | How to reach | plain | Flight / Train / Map — Bus deliberately **not** added |
+| 8 | Register here | tint | `.feelines` — ₹2,500 / ₹4,000 / ₹6,000 + one button |
+| 9 | Footer | — | Unchanged, still uses the existing logo files |
+
+Open on Home:
+- `assets/hero.jpg` — client to supply. Landscape, ≥1920 px wide. Overlay is light
+  (52%→28% teal) with a text-shadow behind the hero type; revisit contrast once it lands.
+- Three "Supported by" logos — client to supply; captions are currently `Support 1/2/…`.
+- Everything in §4 above still stands (payment, accommodation, Bus, Train verification).
+
+### ✅ About — done
+
+Reference order: banner → "ICAPSSP 2025" (the conference) → host institution → Department of
+Mathematics → About Calicut. No partner-society sections — they had none.
+
+`about.html` as it now stands:
+
+| # | Section | Tint | Notes |
+|---|---|---|---|
+| 1 | Page head "About" | — | Intro line no longer mentions partner societies |
+| 2 | **ICAAP & SP 2026** (`#conference`) | plain | `h2` renamed from "Advances in Applied Probability & Stochastic Processes". "Meet the committee" button removed |
+| 3 | About the College (`#college`) | tint | Moved up from 4th; logo block kept |
+| 4 | Department of Mathematics (`#department`) | plain | **Split out** — was nested inside the College section behind an `<hr>` |
+| — | ~~RMS~~ / ~~KMA~~ (`#rms`, `#kma`) | — | **Commented out** — no counterpart on the reference site. Logo files still used by the footer |
+| 5 | About Manjeri & Malabar (`#manjeri`) | tint | "How to reach the venue" button removed. Still a draft needing local verification |
+
+No inbound links pointed at `#rms` or `#kma`, so hiding them left no dead anchors.
+
+### ✅ Committee — done, no changes
+
+Reference order: Patron → Chairman → Conveners → Committee Members (26 bare names, plain
+text, no affiliations). Their academic/advisory committee sits on **Home**, not here.
+
+Ours already matches that shape — IAPC → Convener & Co-Conveners → Organizing Committee,
+whose own order runs President → Vice President → General Secretary → Manager → Treasurer →
+Principal → department faculty. Client decisions this pass: **keep the IAPC on both** Home
+and Committee (they stay in sync manually), and **keep the `.person` card layout** rather
+than converting to plain text. `committee.html` was not edited.
+
+### ✅ Speakers — no changes
+Client reviewed and approved the page as-is (Keynote 5 / Plenary 21 / Invited 13).
+
+### ✅ Schedule — done
+"See the speakers" button commented out (no cross-page links). The page is otherwise the
+`.pending` placeholder until the day-wise programme arrives.
+
+### ✅ Call for Papers — done
+
+Reference order: abstract template link → Call for Papers text → Important Dates →
+Publication → submission email → note on online presentation.
+
+`call-for-papers.html` as it now stands:
+
+| # | Section | Tint | Notes |
+|---|---|---|---|
+| 1 | Present your research (`#call-for-papers`) | plain | Invitation trimmed to the invite + "authors must present". "Email Your Abstract" button and "For Submissions" card kept |
+| 2 | Submission deadlines (`#deadlines`) | tint | **Moved up** from last; "Registration & fees" button removed |
+| 3 | Where accepted papers appear (`#publication`) | plain | **New section** — the ANOR/Springer line split out of the invitation paragraph |
+| 4 | Mode of participation (`#mode`) | tint | Unchanged; matches their closing "Note" about online presentation |
+| — | ~~Topics for contributory paper presentation~~ | — | **Commented out** — Home's 18-topic scope list covers these 10 |
+
+Client declined the abstract-template section — we have no template to link. No inbound
+anchors pointed at anything moved or hidden.
+
+### ✅ Registration — fee tables simplified
+
+The three fee tables were side by side in a `grid--3`. They are now **three stacked
+`.feegroup` blocks**, one under another, each a heading plus simple `.feelines` rows —
+the same style used for the fee summary on Home. No figures changed.
+
+A **How to register** block was added under the fee groups: pay the fee → fill the Google
+form (`TODO`: live URL pending) → upload the payment-receipt screenshot in the form, plus
+the "complete both" reminder and the non-refundable notice. The payment-details pending
+notice stays until bank/UPI details arrive.
+
+Section order is unchanged: Registration fee → Accommodation → Dates to remember.
+`.fee` / `.table-wrap` CSS is now unused by any page — left in place for future tables.
+
+### ✅ Gallery — done
+
+The "photographs will be added soon" placeholder was replaced by two sections:
+
+| # | Section | Tint | Notes |
+|---|---|---|---|
+| 1 | Photographs (featured) | plain | `.carousel` — horizontal scroll-snap strip of **8 empty slots** |
+| 2 | More photos | tint | `.photogrid` — reflowing grid of **9 empty slots** |
+
+Each slot is a `<div class="ph">` (dashed 16:9 box). To fill one, replace that div with
+`<img src="assets/gallery/…" alt="…">` — the `img` rules are already written. Slots can be
+added or removed freely; both layouts reflow.
+
+### Remaining pages, in order
+Participants
+
 ## 5. Order of work
 1. Confirm the 9-page structure and nav labels.
 2. Build the 5 new/split pages by **moving existing markup** — no rewriting, no risk to content.

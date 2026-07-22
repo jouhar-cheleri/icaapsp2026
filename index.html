@@ -55,37 +55,49 @@
         </div>
         <p class="hero__full">Organized by the Department of Mathematics, KAHM Unity Women's College (Autonomous), Manjeri,
           in association with the Ramanujan Mathematical Society and the Kerala Mathematical Association.</p>
+        <!-- TODO: restore when the client asks for the hero CTAs back
         <div class="btn-row" style="margin-top:1.8rem">
           <a class="btn btn--primary" href="registration.html#register">Registration &amp; Fees</a>
           <a class="btn btn--light" href="call-for-papers.html">Call for Papers</a>
         </div>
         <p class="hero__assoc">Selected papers to be considered for a special issue of the
           <em>Annals of Operations Research</em> (Springer).</p>
+        -->
       </div>
     </section>
 
-    <!-- --------------------------- ORGANIZERS --------------------------- -->
+    <!-- -------------------------- SUPPORTED BY -------------------------- -->
     <section class="section">
       <div class="container center">
-        <p class="section__eyebrow">Organized By &amp; In Association With</p>
+        <p class="section__eyebrow">Supported by:</p>
+        <!-- TODO: client to supply the logo images; drop them back into the empty
+             .logo-card boxes below as <img src="assets/…" alt="…"> -->
         <div class="logostrip" style="margin-top:1.4rem">
           <figure>
-            <div class="logo-card"><img src="assets/college-logo.png" alt="KAHM Unity Women's College (Autonomous), Manjeri"></div>
-            <figcaption>KAHM Unity Women's College (Autonomous), Manjeri</figcaption>
+            <div class="logo-card logo-card--empty"></div>
+            <figcaption>Support 1</figcaption>
           </figure>
           <figure>
-            <div class="logo-card"><img src="assets/rms-logo.png" alt="Ramanujan Mathematical Society"></div>
-            <figcaption>Ramanujan Mathematical Society</figcaption>
+            <div class="logo-card logo-card--empty"></div>
+            <figcaption>Support 2</figcaption>
           </figure>
           <figure>
-            <div class="logo-card"><img src="assets/kma-logo.png" alt="Kerala Mathematical Association"></div>
-            <figcaption>Kerala Mathematical Association</figcaption>
+            <div class="logo-card logo-card--empty"></div>
+            <figcaption>Support 1</figcaption>
           </figure>
         </div>
+
+        <p class="section__lead" style="margin-top:2rem">Join us for ICAAP &amp; SP 2026, a premier event bringing together
+          researchers, academics and practitioners to discuss the latest developments in
+          applied probability and stochastic processes. The conference provides a platform
+          for knowledge exchange, collaboration and the showcasing of innovations across
+          engineering, finance, insurance, telecommunications and computer science.</p>
       </div>
     </section>
 
-    <!-- ---------------------------- ABOUT ------------------------------- -->
+    <!-- ---------------------------- ABOUT -------------------------------
+         TODO: client asked to hide this for now — restore when needed.
+
     <section class="section section--tint">
       <div class="container">
         <p class="section__eyebrow">About the Conference</p>
@@ -107,9 +119,10 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- ---------------------------- TOPICS ------------------------------ -->
-    <section class="section">
+    <section class="section section--tint">
       <div class="container">
         <p class="section__eyebrow">Scope</p>
         <h2>Topics to be covered</h2>
@@ -133,6 +146,35 @@
           <li>Advancement in Computational Technologies</li>
           <li>New Mathematical Techniques and Algorithms</li>
           <li>Improvement of Existing Applications &amp; Creation of New Ones</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ------------------------- ADVISORY LIST --------------------------
+         Plain text list, deliberately without cards/photos/links so Home stays short.
+         Mirrors committee.html — keep the two in sync if members change. -->
+    <section class="section">
+      <div class="container">
+        <p class="section__eyebrow">Advisory</p>
+        <h2>International Academic Programme Committee</h2>
+        <p class="section__lead"><strong>Chairperson:</strong> Dr. Achyutha Krishnamoorthy, ICAAP &amp; SP 2026</p>
+        <ul class="namelist" style="margin-top:1.4rem">
+          <li>Prof. S. R. Srinivasa Varadhan, Courant Institute, New York, USA</li>
+          <li>Prof. Alexander Dudin, Belarussian State University, Minsk, Belarus</li>
+          <li>Dr. V. Ramaswami, Hindu University, New Jersey, USA</li>
+          <li>Prof. Arni S. R. Srinivasa Rao, Medical College of Georgia, USA</li>
+          <li>Prof. Vivek S. Borkar, IIT Bombay, India</li>
+          <li>Prof. S. Dharmaraja, IIT Delhi, India</li>
+          <li>Prof. Masakiyo Miyazawa, Tokyo University of Science, Japan</li>
+          <li>Prof. Agassi Melikov, Baku Engineering University, Azerbaijan</li>
+          <li>Prof. Mrinal K. Ghosh, Indian Statistical Institute, Kolkata, India</li>
+          <li>Prof. Antonio Gómez Corral, Complutense University of Madrid, Spain</li>
+          <li>Prof. Qi Ming He, University of Waterloo, Canada</li>
+          <li>Prof. Onno Boxma, Eindhoven University of Technology, Netherlands</li>
+          <li>Prof. M. Manoharan, University of Calicut</li>
+          <li>Prof. V. Thangaraj, Ramanujan Institute, Chennai</li>
+          <li>Prof. Rameshan Vittal, Madras University, Chennai</li>
+          <li>Capt. Dr. Jaison Jacob, St. Aloysius College, Thrissur</li>
         </ul>
       </div>
     </section>
@@ -180,6 +222,24 @@
             <a class="btn btn--ghost" href="https://www.google.com/maps/search/KAHM+Unity+Women's+College+Manjeri"
                target="_blank" rel="noopener">Open in Google Maps</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------- REGISTER ----------------------------- -->
+    <section class="section section--tint">
+      <div class="container center">
+        <p class="section__eyebrow">Registration</p>
+        <h2>Register here</h2>
+        <ul class="feelines" style="margin-top:1.3rem">
+          <li><span>Research scholars &amp; students</span><span class="amt">₹2,500</span></li>
+          <li><span>Faculty members</span><span class="amt">₹4,000</span></li>
+          <li><span>Participants from industry</span><span class="amt">₹6,000</span></li>
+        </ul>
+        <p class="muted" style="margin-top:1rem">Rates differ for paper presentation and for
+          international participants — see Registration.</p>
+        <div class="btn-row" style="justify-content:center;margin-top:1.4rem">
+          <a class="btn btn--primary" href="registration.html#register">Register Here</a>
         </div>
       </div>
     </section>

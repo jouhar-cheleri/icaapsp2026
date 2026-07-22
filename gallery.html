@@ -51,14 +51,45 @@
   </div>
 
   <main>
+    <!-- --------------------------- BANNERS ------------------------------
+         Scroll sideways through the featured photos. Eight empty slots for now.
+         TODO: client to supply images — drop one into each slot as
+         <img src="assets/gallery/banner-1.jpg" alt="…"> replacing the empty div. -->
     <section class="section">
       <div class="container">
-        <!-- TODO: replace this placeholder with the real content when available -->
-        <div class="pending">
-          <div class="pending__icon" aria-hidden="true">&#128247;</div>
-          <h2>Photographs will be added soon</h2>
-          <p>Photographs from the conference will be published here. Please check back after December 2026.</p>
-          <div class="btn-row"><a class="btn btn--ghost" href="index.html">Back to home</a></div>
+        <p class="section__eyebrow">Featured</p>
+        <h2>Photographs</h2>
+        <p class="section__lead">Scroll sideways to browse.</p>
+      </div>
+      <div class="carousel" tabindex="0" aria-label="Featured photographs">
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+        <figure class="carousel__item"><div class="ph"></div></figure>
+      </div>
+    </section>
+
+    <!-- -------------------------- MORE PHOTOS ---------------------------
+         TODO: client to supply images for these slots too. Add or remove
+         .photogrid figures freely — the grid reflows on its own. -->
+    <section class="section section--tint">
+      <div class="container">
+        <p class="section__eyebrow">The Album</p>
+        <h2>More photos</h2>
+        <div class="photogrid" style="margin-top:1.5rem">
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
+          <figure class="photogrid__item"><div class="ph"></div></figure>
         </div>
       </div>
     </section>
