@@ -21,7 +21,6 @@
         <img src="assets/college-logo.png" alt="KAHM Unity Women's College (Autonomous) logo">
         <span class="brand__text">
           <span class="brand__title">ICAAP &amp; SP 2026</span>
-          <span class="brand__sub">Applied Probability &amp; Stochastic Processes</span>
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
@@ -30,7 +29,7 @@
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="committee.html">Committee</a></li>
+        <li><a href="committee.html">Organising Committee</a></li>
         <li><a href="speakers.html">Speakers</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="call-for-papers.html">Call for Papers</a></li>
@@ -53,13 +52,22 @@
   <main>
     <section class="section">
       <div class="container">
-        <!-- TODO: replace this placeholder with the real content when available -->
-        <div class="pending">
-          <div class="pending__icon" aria-hidden="true">&#128203;</div>
-          <h2>The participant list will be published after registration</h2>
-          <p>The list of registered participants will be published on this page once registration has closed. Registration closes on 10 December 2026.</p>
-          <!-- <div class="btn-row"><a class="btn btn--ghost" href="registration.html">Registration &amp; fees</a></div> -->
+        <p class="section__eyebrow">Registered Participants</p>
+        <h2>Participants list</h2>
+        <p class="section__lead">The list updates automatically as new registrations come in.</p>
+
+        <!-- Live embed of the shared Google Sheet.
+             Requires the sheet's link sharing to be "Anyone with the link — Viewer";
+             the /edit URL cannot be embedded, hence /htmlembed. -->
+        <div class="sheet-embed" style="margin-top:1.6rem">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/156HTttzAXpqc19LggBHiUoqRI7ZK5Wrk5EZuzEtQ8gA/htmlembed"
+            title="Registered participants &#8212; ICAAP &amp; SP 2026"
+            loading="lazy"></iframe>
         </div>
+        <p class="muted" style="margin-top:.9rem;font-size:.9rem">Not loading?
+          <a href="https://docs.google.com/spreadsheets/d/156HTttzAXpqc19LggBHiUoqRI7ZK5Wrk5EZuzEtQ8gA/preview"
+             target="_blank" rel="noopener">Open the list in Google Sheets</a>.</p>
       </div>
     </section>
   </main>
@@ -83,7 +91,7 @@
         <ul class="footer-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="committee.html">Committee</a></li>
+          <li><a href="committee.html">Organising Committee</a></li>
           <li><a href="speakers.html">Speakers</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="call-for-papers.html">Call for Papers</a></li>

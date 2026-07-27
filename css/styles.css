@@ -100,7 +100,6 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .brand img { width: 42px; height: 42px; border-radius: 8px; background: var(--white); padding: 3px; box-shadow: var(--shadow-sm); }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__title { font-family: var(--serif); font-weight: 700; color: var(--teal-900); font-size: 1.05rem; }
-.brand__sub { font-size: .72rem; color: var(--ink-soft); letter-spacing: .04em; }
 
 .nav__links { display: flex; align-items: center; gap: .1rem; list-style: none; margin: 0; padding: 0; }
 .nav__links a {
@@ -203,6 +202,64 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .person__tag { display: inline-block; margin-top: .5rem; font-size: .72rem; font-weight: 700;
   letter-spacing: .08em; text-transform: uppercase; color: var(--maroon); }
 
+/* speaker card — photo panel on one half, name + affiliation on the other.
+   Square panel (no circular crop) so portraits keep their framing. */
+.speaker {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.speaker__photo {
+  width: 100%; height: 100%; min-height: 230px;
+  object-fit: cover; object-position: 50% 22%;
+  background: var(--teal-100); border-right: 1px solid var(--line);
+}
+.speaker__body {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 1.1rem 1.2rem;
+}
+.speaker__name {
+  font-family: var(--serif); font-weight: 700; font-size: 1.08rem;
+  line-height: 1.25; color: var(--teal-800);
+}
+.speaker__role { color: var(--ink-soft); font-size: .9rem; line-height: 1.45; margin-top: .4rem; }
+
+@media (max-width: 420px) {
+  .speaker { grid-template-columns: 1fr; }
+  .speaker__photo { min-height: 260px; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+
+/* portrait card — circular photo above the name (plenary / invited rosters) */
+.portrait-grid {
+  display: grid; gap: 1.9rem 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+}
+.portrait { margin: 0; text-align: center; }
+.portrait__photo {
+  width: 122px; height: 122px; margin: 0 auto .75rem;
+  border-radius: 50%; object-fit: cover; object-position: 50% 22%;
+  background: var(--teal-100);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--teal-600), var(--shadow-md);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.portrait:hover .portrait__photo {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px var(--gold), var(--shadow-md);
+}
+.portrait__name {
+  font-family: var(--serif); font-weight: 700; font-size: 1rem;
+  line-height: 1.25; color: var(--teal-800);
+}
+.portrait__role { color: var(--ink-soft); font-size: .82rem; line-height: 1.4; margin-top: .25rem; }
+
+@media (max-width: 480px) {
+  .portrait-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 1.5rem .8rem; }
+  .portrait__photo { width: 104px; height: 104px; }
+  .portrait__name { font-size: .92rem; }
+  .portrait__role { font-size: .76rem; }
+}
+
 /* keynote feature */
 .keynote { display: grid; grid-template-columns: 220px 1fr; gap: 1.5rem; align-items: center; }
 .keynote img { border-radius: var(--radius); box-shadow: var(--shadow-md); width: 220px; }
@@ -251,6 +308,76 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
   padding: .6rem 0; border-bottom: 1px dashed var(--line); text-align: left;
 }
 .feelines .amt { font-family: var(--serif); font-weight: 700; color: var(--maroon); white-space: nowrap; }
+
+/* --------------------- embedded Google Sheet / doc ---------------------- */
+.sheet-embed {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.sheet-embed iframe { display: block; width: 100%; height: 70vh; min-height: 480px; border: 0; }
+@media (max-width: 700px) {
+  .sheet-embed iframe { height: 62vh; min-height: 380px; }
+}
+
+/* ------------------- registration: steps + QR sidebar ------------------- */
+/* Steps run down the left column, the payment QR sits in a sticky card on
+   the right and collapses under the steps on narrow screens. */
+.reg-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2.4rem; align-items: start;
+}
+
+.regsteps { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.4rem; counter-reset: regstep; }
+.regsteps > li { position: relative; padding-left: 3.4rem; counter-increment: regstep; }
+.regsteps > li::before {
+  content: counter(regstep);
+  position: absolute; left: 0; top: -.1rem;
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--teal-800); color: var(--white);
+  font-family: var(--serif); font-weight: 700; font-size: 1.1rem; line-height: 1;
+  box-shadow: var(--shadow-sm);
+}
+.regsteps > li > h3 { margin: .3rem 0 .2rem; font-size: 1.15rem; }
+.regsteps .feegroup:first-of-type { margin-top: 1.2rem; }
+
+/* bank details */
+.paylines { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .55rem; }
+.paylines li {
+  display: grid; grid-template-columns: 148px 1fr; gap: .8rem; align-items: baseline;
+  padding-bottom: .55rem; border-bottom: 1px dashed var(--line);
+}
+.paylines li:last-child { border-bottom: 0; padding-bottom: 0; }
+.paylines .lbl {
+  font-size: .74rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.paylines .val { font-weight: 600; color: var(--teal-900); }
+.paylines .val--code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .05em; }
+
+/* QR card */
+.qr-card {
+  position: sticky; top: 88px;
+  background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--teal-800);
+  border-radius: var(--radius); padding: 1.2rem 1.2rem 1.1rem;
+  box-shadow: var(--shadow-md); text-align: center;
+}
+.qr-card h3 { font-size: 1.1rem; margin: 0 0 .2rem; }
+.qr-card img {
+  width: 100%; max-width: 240px; margin: .9rem auto .8rem;
+  border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--white);
+}
+.qr-card p { margin: 0; font-size: .84rem; color: var(--ink-soft); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .reg-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .qr-card { position: static; max-width: 340px; margin-inline: auto; }
+}
+@media (max-width: 560px) {
+  .regsteps > li { padding-left: 2.9rem; }
+  .regsteps > li::before { width: 2.1rem; height: 2.1rem; font-size: 1rem; }
+  .paylines li { grid-template-columns: 1fr; gap: .1rem; }
+}
 
 /* ------------------------------ timeline ------------------------------- */
 .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
@@ -332,7 +459,7 @@ table.fee td:last-child { font-weight: 700; color: var(--maroon); white-space: n
 /* --------------------------- responsive -------------------------------- */
 /* Nine nav items no longer fit beside the brand, so the menu collapses to the
    hamburger well before the general mobile breakpoint below. */
-@media (max-width: 1080px) {
+@media (max-width: 1150px) {
   .nav__toggle { display: block; }
   .nav__links {
     position: absolute; inset: 100% 0 auto 0; flex-direction: column; align-items: stretch;

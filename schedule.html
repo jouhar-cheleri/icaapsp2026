@@ -21,7 +21,6 @@
         <img src="assets/college-logo.png" alt="KAHM Unity Women's College (Autonomous) logo">
         <span class="brand__text">
           <span class="brand__title">ICAAP &amp; SP 2026</span>
-          <span class="brand__sub">Applied Probability &amp; Stochastic Processes</span>
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
@@ -30,7 +29,7 @@
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="committee.html">Committee</a></li>
+        <li><a href="committee.html">Organising Committee</a></li>
         <li><a href="speakers.html">Speakers</a></li>
         <li><a href="schedule.html" aria-current="page">Schedule</a></li>
         <li><a href="call-for-papers.html">Call for Papers</a></li>
@@ -53,15 +52,23 @@
   <main>
     <section class="section">
       <div class="container">
-        <!-- TODO: replace this placeholder with the real content when available -->
-        <div class="pending">
-          <div class="pending__icon" aria-hidden="true">&#128197;</div>
-          <h2>The schedule will be updated soon</h2>
-          <p>The detailed day-wise programme for December 19&#8211;21, 2026 &#8212; sessions, timings and venues &#8212; is being finalised and will be published on this page. Please check back closer to the conference dates.</p>
-          <!-- TODO: restore if the client wants the cross-page link back
-          <div class="btn-row"><a class="btn btn--ghost" href="speakers.html">See the speakers</a></div>
-          -->
+        <p class="section__eyebrow">Programme</p>
+        <h2>Day-wise schedule</h2>
+        <p class="section__lead">Sessions, timings and venues for December 19&#8211;21, 2026. This page
+          reflects the latest version of the programme.</p>
+
+        <!-- Live embed of the shared Google Sheet.
+             Requires the sheet's link sharing to be "Anyone with the link — Viewer";
+             the /edit URL cannot be embedded, hence /htmlembed. -->
+        <div class="sheet-embed" style="margin-top:1.6rem">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1NMWFfXv5MgnXU1RYa_Sg_6aBqx7h_F4vGx9xFDJZdmk/htmlembed"
+            title="Schedule &#8212; ICAAP &amp; SP 2026"
+            loading="lazy"></iframe>
         </div>
+        <p class="muted" style="margin-top:.9rem;font-size:.9rem">Not loading?
+          <a href="https://docs.google.com/spreadsheets/d/1NMWFfXv5MgnXU1RYa_Sg_6aBqx7h_F4vGx9xFDJZdmk/preview"
+             target="_blank" rel="noopener">Open the schedule in Google Sheets</a>.</p>
       </div>
     </section>
   </main>
@@ -85,7 +92,7 @@
         <ul class="footer-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="committee.html">Committee</a></li>
+          <li><a href="committee.html">Organising Committee</a></li>
           <li><a href="speakers.html">Speakers</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="call-for-papers.html">Call for Papers</a></li>
