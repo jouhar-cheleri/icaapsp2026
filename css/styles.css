@@ -152,7 +152,7 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
    url() simply fails to load and the gradient above shows through unchanged. */
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(160deg, rgba(8,58,53,.35), rgba(8,58,53,.15)), url("../assets/hero.jpg") center/cover no-repeat;
+  background: linear-gradient(160deg, rgba(8,58,53,.35), rgba(8,58,53,.15)), url("../assets/hero.jpeg") center/cover no-repeat;
 }
 /* text-shadow keeps the white type legible now that the photo overlay is light */
 .hero__inner { padding-block: clamp(3.5rem, 9vw, 7rem); position: relative; z-index: 1;
