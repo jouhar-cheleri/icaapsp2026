@@ -1,7 +1,7 @@
 # ICAAP & SP 2026 — Conference Website
 
 Static website for the **International Conference on Advances in Applied Probability and
-Stochastic Processes (ICAAP & SP 2026)** — December 19–21, 2026, KAHM Unity Women's
+Stochastic Processes (ICAAP & SP 2026)** — December 19, 21 & 22, 2026, KAHM Unity Women's
 College, Manjeri, Kerala, India.
 
 Plain HTML/CSS/JS. **No build step** — the files are the site.

@@ -76,7 +76,7 @@ Design, colours, type and the maths background stay exactly as they are. Only th
 2. **Accommodation.** The brochure says "for more details visit the conference website" — which is this website. Need options, tariff, and how to request.
 
 ### Needed to fill the new pages
-3. **Schedule** — day-wise programme for Dec 19–21 (sessions, times, halls, breaks).
+3. **Schedule** — day-wise programme for Dec 19, 21 & 22 (sessions, times, halls, breaks).
 4. **Gallery** — usable photos (campus, department, past seminars) so the page isn't empty at launch.
 5. **Registered participants** — a published Google Sheet once registration opens.
 6. **About Manjeri / Malabar** — 2–3 paragraphs on the host town and region, matching the reference site's "About Calicut". *I can draft this — just approve.*
@@ -91,7 +91,7 @@ Design, colours, type and the maths background stay exactly as they are. Only th
 13. **`Submit Your Paper` button** — submission is by email, so this should become a `mailto:` or be removed rather than wait for a form URL.
 
 ### Already correct, flagging for the record
-14. Both docx files say **"December 9, 20 and 21, 2026"** — a typo for 19. The site already says 19–21. If the brochure is being reprinted, fix it there.
+14. Both docx files say **"December 9, 20 and 21, 2026"**. The dates have since changed to **December 19, 21 & 22, 2026**, and the conference trip has been dropped. The site reflects both; the brochure does not. Fix it if it is being reprinted.
 
 ## 4b. Page-by-page rework against the reference site (July 2026, ongoing)
 
