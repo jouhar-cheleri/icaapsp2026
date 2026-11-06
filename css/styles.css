@@ -388,6 +388,8 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 }
 .timeline .date { font-family: var(--serif); font-weight: 700; color: var(--maroon); }
 .timeline .what { color: var(--ink); }
+/* Extended deadline: struck-through old date followed by the new one */
+.timeline .date-old { color: var(--ink-soft); font-weight: 400; text-decoration-thickness: 2px; margin-right: .35rem; }
 
 /* ------------------------------ tables --------------------------------- */
 .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-sm); background: var(--white); }

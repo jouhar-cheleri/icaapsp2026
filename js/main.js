@@ -25,6 +25,30 @@
     });
   }
 
+  /* ------------- force-download links (a[download]) -------------------
+     Some browsers/hosts show text files such as .tex inline and ignore the
+     download attribute. Fetch the file and save it as a blob instead; if
+     anything fails, fall through to the normal link behaviour. */
+  document.querySelectorAll("a[download]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (!window.fetch || !window.URL || location.protocol === "file:") return;
+      e.preventDefault();
+      fetch(a.href)
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+        .then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          var tmp = document.createElement("a");
+          tmp.href = url;
+          tmp.download = a.getAttribute("download") || "";
+          document.body.appendChild(tmp);
+          tmp.click();
+          tmp.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        })
+        .catch(function () { window.location.href = a.href; });
+    });
+  });
+
   /* --------------------- math formula background ---------------------- */
   var canvas = document.getElementById("math-bg");
   if (!canvas || !canvas.getContext) return;
